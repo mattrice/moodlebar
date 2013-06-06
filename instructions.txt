@@ -7,8 +7,9 @@ Moodle Bar V1.0 (Lewis Carr | www.lewiscarr.co.uk)
 
 <?php include ('moodlebar/moodle_bar.html'); ?>
 
-
 3)Save the file and away you go.
 
-4)If your Moodle site is not 100% width then there is a line of CSS to change in the file (moodle_bar.html), 
+4) Copy and rename the images/ directory into the theme's pix/ directory (e.g. /THEME/pix/moodlebar/blog.png)
+
+5)If your Moodle site is not 100% width then there is a line of CSS to change in the file (moodle_bar.html), 
 set this to your desired width in pixels.  I've put a comment in the file as to where this is.
