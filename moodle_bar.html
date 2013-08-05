@@ -10,187 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
-
-        <style type="text/css">
-            /*<![CDATA[*/
-
-            /* Moodle Bar - main container (set width to actual page size in pixels if not using 100% on your Moodle theme) */
-            #dockbottom {
-                bottom:0;
-                left:0px;
-                position:fixed;
-                clear:both;
-                width:100%;
-                border-top: 1px solid #000;
-                border-left: 1px solid #000;
-                border-right: 1px solid #000;
-                padding:0px;
-                height:28px;
-                z-index:11000; /*Allow layering*/ 
-            }
-
-            /* Moodle Bar - image links*/
-            #dockbottom img {
-                padding-right: 2px;
-                padding-left: 2px;
-            }
-
-            /* Moodle Bar - image links*/
-            #dockbottom a:hover img {
-                background: #fff;
-            }
-
-            /* Moodle Bar - text links*/
-            #dockbottom a:link {
-                text-decoration: none;
-                color: #0f1e4a;
-                text-decoration: underline;
-                position: inherit;
-            }
-
-            #dockbottom a:visited {
-                text-decoration: none;
-                color: #0f1e4a;
-                text-decoration: underline;
-            }
-
-            #dockbottom a:hover {
-                text-decoration: underline;
-                color: #0f1e4a;
-            }
-
-            /* Moodle Bar - inner container - control background colour and add image bg if required*/
-            #dockbottom-inner {
-                text-align:left;
-                width:100%;
-                float:left;
-                padding-top: 6px;
-                padding-bottom: 3px;
-                position:relative;
-                overflow:visible;/*Make sure it doesnt crop the widget*/
-                background-color:#d7d6d6;
-                font-size: 0.8em;
-            }
-
-            #dockbottom-inner .block-inner {
-                padding: 0px;
-                margin: 0px;
-            }
-
-            /* Moodle Bar - left column used for quick launch icons*/
-            .dockleft-block {
-                margin-left: 10px;
-                float:left;
-                display:block;
-                margin-right:20px;
-                min-width:240px;
-                width:auto!important;
-                border-right: 1px dotted #000;
-            }
-
-
-            /* Moodle Bar - middle container used for notifications*/
-            .dockmiddle-block {
-                float:left;
-                display:block;
-                margin-right:20px;
-                min-width:350px;
-                width:auto!important;
-                text-align: center;
-            }
-
-            /* Moodle Bar - right container used for login/logout*/
-            .dockright-block {
-                display:block;
-                min-width:250px;
-                position:absolute;
-                right:10px;
-                overflow:visible;
-                text-align: center;
-                border-left: 1px dotted #000;
-            }
-
-            /* Moodle Bar Tooltips- fancy rollovers used on the quick launch images*/
-            a.tooltip span {
-                display:none; 
-                padding:2px 3px; 
-                margin-left:-37px;
-                margin-top: -27px; 
-                width:auto;
-            }
-
-            a.tooltip:hover span{
-                display:inline; 
-                position:absolute; 
-                background:#282828; 
-                color:#fff;
-                font-size: 0.8em;
-            }
-
-            div#moodlebarcoursesearch
-            {
-                bottom:0;
-                left:0px;
-                margin-bottom: 28px;
-                position:fixed;
-                clear:both;
-                border-left: 1px solid #000;
-                border-right: 1px solid #000;
-                border-top: 1px solid #000;
-                padding:0px;
-                height:28px;
-                z-index:11000; /*Allow layering*/ 
-                background: #cdcdcd;
-                display: none;
-                width: 335px;
-                padding-top: 5px;
-                padding-left: 4px;
-                padding-right: 2px;
-                padding-bottom: 8px;
-                text-align: center;
-            }
-
-            div#moodlebarcoursesearch input
-            {
-                background: #fff;
-                -moz-border-radius-bottomleft: 5px;
-                -webkit-border-radius-bottomleft: 5px;
-                -moz-border-radius-bottomright: 5px;
-                -webkit-border-radius-bottomright: 5px;
-                -moz-border-radius-topleft: 5px;
-                -webkit-border-radius-topleft: 5px;
-                -moz-border-radius-topright: 5px;
-                -webkit-border-radius-topright: 5px;
-                border-left: 1px solid #fff;
-                border-right: 1px solid #fff;
-                border-bottom: 1px solid #fff;
-                border-top: 1px solid #fff;
-            }
-
-            div#moodlebarcoursesearch input:hover {
-                background: #fff;
-                -moz-border-radius-bottomleft: 5px;
-                -webkit-border-radius-bottomleft: 5px;
-                -moz-border-radius-bottomright: 5px;
-                -webkit-border-radius-bottomright: 5px;
-                -moz-border-radius-topleft: 5px;
-                -webkit-border-radius-topleft: 5px;
-                -moz-border-radius-topright: 5px;
-                -webkit-border-radius-topright: 5px;
-                border-left: 1px solid #9a9a9b;
-                border-right: 1px solid #9a9a9b;
-                border-bottom: 1px solid #9a9a9b;
-                border-top: 1px solid #9a9a9b;
-            }
-
-            /* Puts a healthy space between the online users and the messages*/
-            .mbmessagesunread {
-                padding-left: 20px;
-            }
-
-            /*]]>*/
-        </style>
-
         <script type="text/javascript">
         //<![CDATA[
             function toggleLayer(whichLayer)
@@ -217,7 +36,7 @@
             <form name="form1" method="get" action="<?php echo $CFG->wwwroot.'/course/search.php' ?>" id="form1"><input type="text" name="search" id="coursesearchbox" /> <input type="submit" value="Courses" /></form>
         </div>
         <!-- Creates the container that holds it all together -->
-        <div id="dockbottom">
+        <div id="dockbottom" class="moodlebar">
             <div id="dockbottom-inner" class="clear-block">
                 <div class="dockleft-block"><!-- Left block content starts-->
                     <?php 
@@ -282,7 +101,7 @@
                     // do not show stats icon if stats is disabled
                     }
                     else {
-                    echo '<a class="tooltip" href="'.$CFG->wwwroot.'/course/report/log/live.php?id=1" /><img src="'. $OUTPUT->pix_url('moodlebar/graph', 'theme').'" title="Live Logs"  /><span>Live Logs</span></a>';
+                    echo '<a class="tooltip" href="'.$CFG->wwwroot.'/report/loglive/index.php?id=1&inpopup=1" /><img src="'. $OUTPUT->pix_url('moodlebar/graph', 'theme').'" title="Live Logs"  /><span>Live Logs</span></a>';
                     }
                     }
 
